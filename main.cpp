@@ -34,14 +34,16 @@ using namespace scene;
 
         io::IFileSystem *filesys;
 
+        filesys=device->getFileSystem();
+
      //  irr::io::path path2("mohdm6.bsp");
-       irr::io::IReadFile *file;
-         file=filesys->createAndOpenFile("mohdm6.bsp");
+      // irr::io::IReadFile *file;
+       //  file=filesys->createAndOpenFile("mohdm6.bsp");
       //  file->getFileName();
             //  CBSPMeshFileLoader2 cmesh(smgr, device->getFileSystem()); //createMesh
-              CBSPMeshFileLoader cmesh(smgr,filesys); //createMesh
+              CBSPMeshFileLoader2 cmesh(smgr,filesys); //createMesh
 
-        mesh=cmesh.createMesh( file);
+        mesh=cmesh.createMesh( filesys->createAndOpenFile("mohdm6.bsp"));
 
        // cmesh.getMesh( "mohdm6.bsp");
 
@@ -55,6 +57,7 @@ using namespace scene;
 
           //  if ( mesh )
                     node = smgr->addOctreeSceneNode( mesh->getMesh(0) );
+       //             node = smgr->addMeshSceneNode( mesh->getMesh(0) );
 
             if (node) {
              //     node->setMaterialFlag(video::EMF_LIGHTING,false);

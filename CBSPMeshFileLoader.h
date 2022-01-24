@@ -17,15 +17,15 @@ namespace scene
 {
 
 //! Meshloader capable of loading Quake 3 BSP files and shaders
-class CBSPMeshFileLoader : public IMeshLoader
+class CBSPMeshFileLoader2 : public IMeshLoader
 {
 public:
 
         //! Constructor
-        CBSPMeshFileLoader(scene::ISceneManager* smgr, io::IFileSystem* fs);
+        CBSPMeshFileLoader2(scene::ISceneManager* smgr, io::IFileSystem* fs);
 
         //! destructor
-        virtual ~CBSPMeshFileLoader();
+        virtual ~CBSPMeshFileLoader2();
 
         //! returns true if the file maybe is able to be loaded by this class
         //! based on the file extension (e.g. ".bsp")
