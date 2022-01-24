@@ -1,4 +1,4 @@
 # IrrMOHAA
-currently a WIP trying to get the basics together for a working demo.
+working using unmodified irrlicht build 1.8.4
 
 ![screen](screen.png)
