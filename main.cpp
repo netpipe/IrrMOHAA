@@ -3,11 +3,20 @@
 
 #include <irrlicht.h>
     #include <iostream>
+
+using namespace irr;
+using namespace scene;
+using namespace gui;
+using namespace video;
+using namespace core;
+using namespace quake3;
+using namespace io;
+
     #include "CMOHAALevelMesh.h"
 #include "CBSPMeshFileLoader.h"
 
-    using namespace irr;
-using namespace scene;
+	Q3LevelLoadParameter loadParam;
+
 
     int main( ) {
             video::E_DRIVER_TYPE driverType = video::EDT_OPENGL;
@@ -29,7 +38,16 @@ using namespace scene;
             scene::IAnimatedMesh *mesh = 0;
             scene::ISceneNode *node = 0;
 
-
+	// default Quake3 loadParam
+	loadParam.defaultLightMapMaterial = EMT_LIGHTMAP;
+	loadParam.defaultModulate = EMFN_MODULATE_1X;
+	loadParam.defaultFilter = EMF_ANISOTROPIC_FILTER;
+	loadParam.verbose = 2;
+	loadParam.mergeShaderBuffer = 1;		// merge meshbuffers with same material
+	loadParam.cleanUnResolvedMeshes = 1;	// should unresolved meshes be cleaned. otherwise blue texture
+	loadParam.loadAllShaders = 1;			// load all scripts in the script directory
+	loadParam.loadSkyShader = 0;			// load sky Shader
+	loadParam.alpharef = 1;
 
 
         io::IFileSystem *filesys;
@@ -41,10 +59,14 @@ using namespace scene;
        //  file=filesys->createAndOpenFile("mohdm6.bsp");
       //  file->getFileName();
             //  CBSPMeshFileLoader2 cmesh(smgr, device->getFileSystem()); //createMesh
-              CBSPMeshFileLoader2 cmesh(smgr,filesys); //createMesh
+              CMOHAALevelMesh cmesh(filesys,smgr,loadParam); //createMesh
 
-        mesh=cmesh.createMesh( filesys->createAndOpenFile("mohdm6.bsp"));
+//        mesh=cmesh.createMesh( filesys->createAndOpenFile("mohdm6.bsp"));
+//        mesh=cmesh.createMesh( filesys->createAndOpenFile("m1l1.bsp"));
 
+        cmesh.loadFile(filesys->createAndOpenFile("mohdm6.bsp"));
+        mesh=cmesh.getMesh(0,0,0,0);
+      //  IMesh* CMOHAALevelMesh::getMesh(s32 frameInMs, s32 detailLevel, s32 startFrameLoop, s32 endFrameLoop)
        // cmesh.getMesh( "mohdm6.bsp");
 
 //        mesh =cmesh.getMesh();

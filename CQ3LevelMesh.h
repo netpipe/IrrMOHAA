@@ -13,7 +13,7 @@
 #include "IVideoDriver.h"
 #include "irrString.h"
 #include "ISceneManager.h"
-//#include "os.h"
+#include "os.h"
 
 namespace irr
 {

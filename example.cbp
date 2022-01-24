@@ -18,9 +18,11 @@
 		</VirtualTargets>
 		<Compiler>
 			<Add option="-fpermissive" />
+			<Add option="-D_DEBUG" />
+			<Add directory="./" />
 			<Add directory="/home/Dev/libs/game/Irrlicht-SVN/include" />
-			<Add directory="/home/netpipe/gamedev/irrlicht-1.8.4/include" />
-			<Add directory="/home/netpipe/gamedev/irrlicht-1.8.4/source/Irrlicht" />
+			<Add directory="/home/netpipe/gamedev/irrlicht-1.8.5/include" />
+			<Add directory="/home/netpipe/gamedev/irrlicht-1.8.5/source/Irrlicht" />
 		</Compiler>
 		<Linker>
 			<Add library="GL" />
@@ -28,7 +30,7 @@
 			<Add library="Xxf86vm" />
 			<Add library="X11" />
 			<Add directory="/home/Dev/libs/game/Irrlicht-SVN/lib/Linux" />
-			<Add directory="/home/netpipe/gamedev/irrlicht-1.8.4/lib/Linux" />
+			<Add directory="/home/netpipe/gamedev/irrlicht-1.8.5/lib/Linux" />
 		</Linker>
 		<Unit filename="CBSPMeshFileLoader.cpp" />
 		<Unit filename="CBSPMeshFileLoader.h" />

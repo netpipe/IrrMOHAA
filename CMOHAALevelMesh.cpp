@@ -103,7 +103,7 @@ bool CMOHAALevelMesh::loadFile(io::IReadFile* file)
 					header.version != 0x13			// mohaa
 		)
 	{
-		os::Printer::log("Could not load .bsp file, unknown header.", file->getFileName(), ELL_ERROR);
+		os::Printer::log("aCould not load .bsp file, unknown header.", file->getFileName(), ELL_ERROR);
 		return false;
 	}
 
