@@ -29,7 +29,11 @@ using namespace io;
             }
 
             device->setWindowCaption( L"Irrlicht: Allied Assault" );
-        ///    device->getFileSystem()->addFileArchive("main",true,false,io::EFAT_FOLDER,"");
+           // device->getFileSystem()->addFileArchive("main",true,false,io::EFAT_FOLDER,"");
+            device->getFileSystem()->addFileArchive("./Pak0.pk3");
+             device->getFileSystem()->addFileArchive("./Pak1.pk3");
+            device->getFileSystem()->addFileArchive("./Pak2.pk3");
+
 
             video::IVideoDriver *driver = device->getVideoDriver();
             scene::ISceneManager *smgr = device->getSceneManager();
