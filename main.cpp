@@ -33,6 +33,7 @@ using namespace io;
             device->getFileSystem()->addFileArchive("./Pak0.pk3");
              device->getFileSystem()->addFileArchive("./Pak1.pk3");
             device->getFileSystem()->addFileArchive("./Pak2.pk3");
+  device->getFileSystem()->addFileArchive("./pak6.pk3");
 
 
             video::IVideoDriver *driver = device->getVideoDriver();
@@ -69,7 +70,7 @@ using namespace io;
 //        mesh=cmesh.createMesh( filesys->createAndOpenFile("m1l1.bsp"));
 
         cmesh.loadFile(filesys->createAndOpenFile("mohdm6.bsp"));
-        mesh=cmesh.getMesh(0,0,0,0);
+        //mesh=cmesh.getMesh(0,0,0,1);
       //  IMesh* CMOHAALevelMesh::getMesh(s32 frameInMs, s32 detailLevel, s32 startFrameLoop, s32 endFrameLoop)
        // cmesh.getMesh( "mohdm6.bsp");
 
@@ -81,9 +82,8 @@ using namespace io;
        // s32
            // mesh2->getMesh(L"./mohdm6.bsp");
 
-          //  if ( mesh )
-                    node = smgr->addOctreeSceneNode( mesh->getMesh(0) );
-             //       node = smgr->addMeshSceneNode( mesh->getMesh(0) );
+//            if ( cmesh )
+                    node = smgr->addOctreeSceneNode( cmesh.getMesh(0,0,0,1) );
 
             if (node) {
              //     node->setMaterialFlag(video::EMF_LIGHTING,false);
