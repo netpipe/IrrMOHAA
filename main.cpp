@@ -79,7 +79,7 @@ using namespace io;
 
           //  if ( mesh )
                     node = smgr->addOctreeSceneNode( mesh->getMesh(0) );
-       //             node = smgr->addMeshSceneNode( mesh->getMesh(0) );
+             //       node = smgr->addMeshSceneNode( mesh->getMesh(0) );
 
             if (node) {
              //     node->setMaterialFlag(video::EMF_LIGHTING,false);
